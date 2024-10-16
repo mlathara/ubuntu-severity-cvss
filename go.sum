@@ -1,0 +1,4 @@
+github.com/aquasecurity/trivy v0.56.2 h1:4QNIFIBvkFznVy/c6rZwn7fqqaO6izYHtNmw0lMO26Q=
+github.com/aquasecurity/trivy v0.56.2/go.mod h1:P6LM+3h3G/nndp3BDugw0YZKBOC0lNRX2zCX/LxOpyo=
+github.com/aquasecurity/trivy-db v0.0.0-20240910133327-7e0f4d2ed4c1 h1:G0gnacAORRUqz2Tm5MqivSpldY2GZ74ijhJcMsae+sA=
+github.com/aquasecurity/trivy-db v0.0.0-20240910133327-7e0f4d2ed4c1/go.mod h1:PYkSRx4dlgFATEt+okGwibvbxVEtqsOdH+vX/saACYE=
