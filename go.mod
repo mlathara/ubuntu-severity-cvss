@@ -1,6 +1,6 @@
 module github.com/mlathara/ubuntu-severity-cvss
 
-go 1.23.2
+go 1.22.8
 
 require github.com/aquasecurity/trivy v0.56.2
 

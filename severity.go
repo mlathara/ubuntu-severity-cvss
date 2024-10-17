@@ -31,7 +31,8 @@ func (UbuntuSeverityCvss) Name() string {
 
 func (UbuntuSeverityCvss) PostScanSpec() serialize.PostScanSpec {
 	return serialize.PostScanSpec{
-		Action: api.ActionUpdate,
+		Action: api.ActionInsert,
+		IDs: []string{"CVE-2024-7348"},
 	}
 }
 
@@ -50,9 +51,12 @@ func getSeverity(cvss types.CVSS) types.Severity {
 }
 
 func (UbuntuSeverityCvss) PostScan(results serialize.Results) (serialize.Results, error) {
+	wasm.Info("Running Postscan")
 	for i, result := range results {
+	    wasm.Info(fmt.Sprintf("Iterating results %#v", results))
 		for j, vuln := range result.Vulnerabilities {
 			if vuln.SeveritySource != "ubuntu" {
+				wasm.Info(fmt.Sprintf("Skipping %s with SeveritySource %s", vuln.VulnerabilityID, vuln.SeveritySource))
 				continue
 			}
 			wasm.Info(fmt.Sprintf("Checking CVE: %s for pkgId: %s to see if severity needs to be updated", vuln.VulnerabilityID, vuln.PkgID))
